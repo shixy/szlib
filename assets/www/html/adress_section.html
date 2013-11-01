@@ -1,0 +1,38 @@
+<section id="adress_section">
+    <header>
+        <nav class="left">
+            <a href="#" data-icon="undo" data-target="back">返回</a>
+        </nav>
+        <h1 class="title">图书馆之城</h1>
+    </header>
+    <nav class="header-secondary">
+        <div style="width: 640px;" class="grid">
+            <a href="" class="one-part" style="display: block;">龙岗</a>
+            <a href="" class="one-part" style="display: block;">大鹏</a>
+            <a href="" class="one-part" style="display: block;">坪山</a>
+            <a href="" class="one-part" style="display: block;">福田</a>
+            <a href="" class="one-part" style="display: block;">罗湖</a>
+            <a href="" class="one-part" style="display: block;">南山</a>
+            <a href="" class="one-part" style="display: block;">宝安</a>
+            <a href="" class="one-part" style="display: block;">光明</a>
+        </div>
+        <i class="icon next" style="position: absolute;right:0;top:0;opacity:.2;"></i>
+    </nav>
+    <article class="active" data-scroll="true" id="adress_article">
+        <ul class="list"></ul>
+    </article>
+    <script type="text/html" id="tpl_adress">
+        {each $data}
+        <li class="divider" data-area="{$value.areaName}">{$value.areaName}</li>
+        {each $value.childlibs}
+        <li data-icon="map">
+            <div class="tag">
+                <a href="tel:{$value.tel}" data-target="link">{$value.tel}</a>
+            </div>
+            <strong>{$value.name}</strong>
+            <p>{$value.adress}</p>
+        </li>
+        {/each}
+        {/each}
+    </script>
+</section>

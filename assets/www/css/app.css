@@ -1,0 +1,36 @@
+article{
+    background-color: #eee;
+    color: #666;
+}
+ul.list{
+    background: none;
+}
+ul.list>li{
+    background-color: #fff;
+}
+.index-block{
+    -webkit-box-flex:1;
+    min-width: 150px;
+    display: -webkit-box;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    border:1px solid rgba(0,0,0,0.1);
+    color: #fff;
+    background-color: #1faeff;
+    margin: 5px 5px 0 0;
+}
+.index-block i.icon{
+    font-size: 2em;
+}
+.paper {
+    padding: 10px;
+}
+.paper p{
+    text-indent: 2em;
+    line-height: 2em;
+    font-size: 1em;
+}
+.cloud-tag{
+    float: left;margin:10px 15px;padding: 3px;background-color: #E67E22;
+    color: #fff;border-radius: 3px;font-size: .8em;
+}

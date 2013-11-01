@@ -1,0 +1,194 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>深圳图书馆移动助手</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="css/Jingle.min.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <div id="aside_container">
+        <aside id="search_memu" data-position="right" data-transition="push">
+            <div class="header" style="font-size: 1em;">查询</div>
+            <div class="center" style="padding: 20px 15px;;">
+                <div style="position:relative;">
+                    <select name="searchType" id="menu_search_type" style="padding: 5px;">
+                        <option value="all" selected>任意词</option>
+                        <option value="title">书名</option>
+                        <option value="author">作者</option>
+                        <option value="subject">关键字</option>
+                        <option value="isbn">isbn</option>
+                        <option value="publisher">出版社</option>
+                        <option value="callno">索书号</option>
+                    </select>
+                    <div data-icon="arrow-down" style="position: absolute;top:8px;right: 10px;color: #666;"></div>
+                </div>
+                <input type="text" id="menu_search_value" placeholder="请输入关键字">
+                <div data-checkbox="unchecked" id="menu_checkbox_reserve">
+                    可预借
+                </div>
+                <button class="carrot block" data-icon="search" style="margin-top:20px;" id="btn_menu_search">查询</button>
+            </div>
+        </aside>
+    </div>
+    <div id="section_container">
+        <section id="index_section" class="active">
+            <header>
+                <h1 class="title">深圳图书馆助手</h1>
+                <nav class="right">
+                    <button id="btn_scan_barcode" style="padding: 0 10px;font-size: 1.4em" data-icon="barcode" class="belize-hole"></button>
+                </nav>
+            </header>
+            <footer>
+                <a  href="#home_article" data-target="article" data-icon="home" class="active">深图信息</a>
+                <a  href="#" id="anchor_user_service" data-icon="user">读者服务</a>
+                <a  href="#index_phone_article" data-target="article" data-icon="phone">电话服务</a>
+                <a  href="#index_search_article" data-target="article" data-icon="books">查询书籍</a>
+            </footer>
+            <article id="home_article"class="active">
+                <div class="grid vertical" style="height: 100%;width:100%;">
+                    <div id="index_images">
+                        <div style="height: 200px;overflow:hidden;">
+                            <img src="images/1.jpg" style="height: 200px;width:500px;">
+                            <img src="images/2.jpg" style="height: 200px;width:500px;">
+                            <img src="images/3.jpg" style="height: 200px;width:500px;">
+                            <img src="images/4.jpg" style="height: 200px;width:500px;">
+                        </div>
+                    </div>
+                    <div class="one-part grid vertical" style="background-color:#eee;color: #666;padding: 0 0 5px 5px;">
+                        <div  class="grid one-part">
+                            <a href="#notice_section" style="background-color:#78ba00 " data-target="section"  class="index-block" data-selected="selected" data-icon="rocket">通知公告</a>
+                            <a href="#lecture_section"  data-target="section"  class="index-block" data-selected="selected" data-icon="flag">展会讲座</a>
+                        </div>
+                        <div  class="grid one-part">
+                            <a href="#adress_section" style="background-color:#569ce3 " data-target="section" class="index-block" data-selected="selected" data-icon="stack">成员馆</a>
+                            <a href="#selflib_section" style="background-color:#E67E22 " data-target="section"  class="index-block" data-selected="selected" data-icon="drawer-3" style="background-color: #E67E22">街区图书馆</a>
+                        </div>
+
+                        <div  class="grid one-part">
+                            <a href="#service_time_section" style="background-color:#00a4a4 " data-target="section"  class="index-block" data-selected="selected" data-icon="alarm">
+                                服务时间
+                            </a>
+                            <a href="#about_section" style="background-color:#95A5A6 " data-target="section"  class="index-block" data-selected="selected" data-icon="office" style="background-color: #95A5A6">关于深图</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article id="index_user_article" class="indented">
+                <ul class="list inset" style="margin-top: 20px;">
+                    <li data-icon="user">
+                        <strong><span id="txt_username"></span>(<span id="txt_loginname" style="font-size: .8em"></span>)</strong>
+                        <p>借阅证： <span id="txt_cardno"></span></p>
+                    </li>
+                </ul>
+                <ul class="list inset" style="margin-top: 10px;">
+                    <li data-selected="selected" data-icon="next">
+                        <a href="#loanbook_section" data-target="section">借阅查询(续借)</a>
+                    </li>
+                    <li data-selected="selected" data-icon="next">
+                        <a href="#reservebook_section" data-target="section">预借查询</a>
+                    </li>
+                </ul>
+                <ul class="list inset" style="margin-top: 10px;">
+                    <li data-selected="selected" data-icon="next" id="link_change_loginname">修改登录名</li>
+                    <li data-selected="selected" data-icon="next" id="link_change_pwd">修改密码</li>
+                </ul>
+                <ul class="list inset" style="margin-top: 10px;">
+                    <li data-selected="selected" data-icon="next">
+                        <a href="#author_section" data-target="section">关于</a>
+                    </li>
+                </ul>
+                <div style="margin: 10px;">
+                    <button class="button block alizarin" id="btn_exit_user">退出登录</button>
+                </div>
+            </article>
+            <article id="index_phone_article" data-scroll="true" class="indented">
+                <ul class="list"></ul>
+            </article>
+            <article id="index_search_article">
+                <div style="margin:0 auto;width: 240px;margin-top: 50px;">
+                    <input type="text" id="index_search_value" style="width: 170px;">
+                    <button data-icon="search" id="btn_index_search" class="carrot" style="padding: 10px 8px;margin-left: -6px;border-radius: 0 5px 5px 0;">查询</button>
+                    <div data-checkbox="unchecked" id="checkbox_reserve" style="padding: 10px;font-size: .9em;">
+                        预借书籍
+                    </div>
+                </div>
+                <div id="newbook_container">
+                </div>
+            </article>
+        </section>
+    </div>
+    <script type="text/html" id="login_tpl">
+        <header>
+            <nav class="left">
+                <a href="#" data-target="closePopup" data-icon="undo">返回</a>
+            </nav>
+            <h1 class="title">登录</h1>
+        </header>
+        <article class="active">
+            <form style="padding: 20px;">
+                <input type="text" placeholder="卡号/登录名" style="border: none;" id="username" data-icon="home" value="">
+                <input type="password" placeholder="密码" style="border: none;" id="password" value="">
+                <button class="button block nephritis" type="button" data-icon="lock" id="btn_login" style="padding:10px 5px;" >登录</button>
+            </form>
+        </article>
+    </script>
+
+    <script type="text/html" id="tel_service_tpl">
+        <li class="divider">24小时语音自助电话</li>
+        {each self24}
+        <li data-selected="selected" data-icon="phone"> <a href="tel:{$value}" data-target="link">{$value}</a> </li>
+        {/each}
+        <li class="divider">各服务区域电话（服务时间：9:00-21:00）</li>
+        {each areatel}
+        <li data-selected="selected" data-icon="phone">
+            <a href="tel:{$value.tel}" data-target="link">
+                <strong style="color:#D35400">{$value.text}</strong>
+                <p>{$value.tel}</p>
+            </a>
+        </li>
+        {/each}
+    </script>
+    <script type="text/html" id="tpl_cloud_tag">
+        <div style="margin:20px 0 10px 20px;font-size:0.8em;opacity:.7;">推荐新书：</div>
+        {each $data}
+        <div class="cloud-tag" data-recordno="{$value.recordNo}">
+            {$value.title}
+        </div>
+        {/each}
+    </script>
+    <script type="text/html" id="tpl_change_loginname">
+        <div style="padding:20px;">
+            <div style="margin-bottom:20px;">请输入新的用户名：</div>
+            <div>
+                <input type="text" placeholder="新用户名">
+                <button class="block" data-icon="signup" style="margin-top:10px;">确定</button>
+                <div data-icon="spinner" style="text-align:center;margin-top:5px;display:none;">正在修改...</div>
+            </div>
+        </div>
+    </script>
+    <script type="text/html" id="tpl_change_password">
+        <div style="padding:20px;">
+            <div style="margin-bottom:20px;">请输入新密码：</div>
+            <div>
+                <input type="password" placeholder="新密码">
+                <button class="block" data-icon="signup" style="margin-top:10px;">确定</button>
+                <div data-icon="spinner" style="text-align:center;margin-top:5px;display:none;">正在修改...</div>
+            </div>
+        </div>
+    </script>
+	<script type="text/javascript" src="js/lib/cordova.js"></script>
+    <!-- lib -->
+    <script type="text/javascript" src="js/lib/template.min.js"></script>
+    <script type="text/javascript" src="js/lib/Jingle.min.js"></script>
+    <script type="text/javascript" src="js/lib/zepto.touch2mouse.js"></script>
+    <script type="text/javascript" src="js/lib/barcodescanner.js"></script>
+    <!--- app --->
+    <script type="text/javascript" src="js/app/app.js"></script>
+    <script type="text/javascript" src="js/app/szLibAPI.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<section id="selflib_section">
+    <header>
+        <nav class="left">
+            <a href="#" data-icon="undo" data-target="back">返回</a>
+        </nav>
+        <h1 class="title">24小时自助图书馆</h1>
+    </header>
+    <nav class="header-secondary">
+        <div style="width: 640px;" class="grid">
+            <a href="" class="one-part" style="display: block;">龙岗</a>
+            <a href="" class="one-part" style="display: block;">大鹏</a>
+            <a href="" class="one-part" style="display: block;">坪山</a>
+            <a href="" class="one-part" style="display: block;">福田</a>
+            <a href="" class="one-part" style="display: block;">罗湖</a>
+            <a href="" class="one-part" style="display: block;">南山</a>
+            <a href="" class="one-part" style="display: block;">宝安</a>
+            <a href="" class="one-part" style="display: block;">光明</a>
+        </div>
+        <i class="icon next" style="position: absolute;right:0;top:0;opacity:.2;"></i>
+    </nav>
+    <article class="active" data-scroll="true" id="selflib_article">
+        <ul class="list">
+        </ul>
+    </article>
+    <script type="text/html" id="tpl_selflib">
+        {each $data}
+        <li class="divider" data-area="{$value.areaName}">{$value.areaName}</li>
+        {each $value.selflibs}
+        <li data-icon="map" data-no="{$value.no}" data-selected="selected">
+            <strong>{$value.adress}</strong>
+            <p>{$value.no}</p>
+        </li>
+        {/each}
+        {/each}
+    </script>
+</section>

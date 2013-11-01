@@ -1,0 +1,30 @@
+<section id="loanbook_section">
+    <header>
+        <nav class="left">
+            <a href="#" data-icon="undo" data-target="back">返回</a>
+        </nav>
+        <h1 class="title">我的借阅</h1>
+        <nav class="right">
+            <button class="button" id="btn_renew_book">续借</button>
+        </nav>
+    </header>
+    <article class="active" data-scroll="true" id="loanbook_article">
+        <ul class="list"> </ul>
+    </article>
+    <script type="text/html" id="tpl_loanbook">
+        {each $data}
+        {if $value.renew == 1}
+        <li data-icon="checkmark"><div class="tag">已续借</div>
+        {else}
+        <li data-icon="checkbox-unchecked" data-selected="selected" data-barcode={$value.barCode}>
+        <!--<li  data-barcode={$value.barCode}>-->
+        {/if}
+            <strong>{$value.title}</strong>
+            <p>
+                <span>借出日期：{$value.loanDate}</span>
+                <span style="margin-left:10px;">应还日期: <span style="color:#E74C3C">{$value.returnDate}</span> </span>
+            </p>
+        </li>
+        {/each}
+    </script>
+</section>

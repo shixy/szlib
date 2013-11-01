@@ -1,0 +1,24 @@
+<section id="reservebook_section">
+    <header>
+        <nav class="left">
+            <a href="#" data-icon="undo" data-target="back">返回</a>
+        </nav>
+        <h1 class="title">我的预借</h1>
+    </header>
+    <article class="active" data-scroll="true" id="reservebook_article">
+        <ul class="list"></ul>
+    </article>
+    <script type="text/html" id="tpl_reserve">
+        {each $data}
+        <li>
+            <div class="tag">{$value.status}</div>
+            <strong>{$value.title}</strong>
+            <p>{$value.loanAddr}</p>
+            <p>
+                <span>登记日期：{$value.regDate}</span>
+            </p>
+            <p><span>最后取书日期: <span style="color:#E74C3C">{$value.deadline}</span> </span></p>
+        </li>
+        {/each}
+    </script>
+</section>

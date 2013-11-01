@@ -1,0 +1,19 @@
+<section id="lib_book_section">
+    <header>
+        <nav class="left">
+            <a href="#" data-icon="undo" data-target="back">返回</a>
+        </nav>
+        <h1 class="title" style="left:80px;right:80px;width: auto;overflow: hidden;text-overflow: ellipsis;"></h1>
+    </header>
+    <article class="active" data-scroll="true" id="lib_book_article">
+        <ul class="list">
+        </ul>
+    </article>
+    <script type="text/html" id="tpl_lib_book">
+        {each $data}
+        <li data-icon="next" data-recordno="{$value.recordNo}" data-selected="selected">
+            <strong>{$value.title}</strong>
+        </li>
+        {/each}
+    </script>
+</section>

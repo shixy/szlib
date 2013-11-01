@@ -1,0 +1,29 @@
+<section id="notice_section">
+    <header>
+        <nav class="left">
+            <a href="#" data-icon="undo" data-target="back">返回</a>
+        </nav>
+        <h1 class="title">通知公告</h1>
+        <nav class="right">
+            <a href="#" data-icon="shuffle" id="notice_refresh"></a>
+        </nav>
+    </header>
+    <article class="active" style="overflow: auto;" id="notice_article">
+        <div class="scrollWrapper">
+            <ul class="list">
+
+            </ul>
+            <button style="display: none;margin:5px 5%;width:90%;" class="block" >点击加载更多</button>
+        </div>
+
+
+    </article>
+    <script type="text/html" id="tpl_notice">
+        {each $data}
+        <li data-icon="next" data-selected="selected" data-id="{$value.id}">
+            <strong>{$value.title}</strong>
+            <p>{$value.publishDate}</p>
+        </li>
+        {/each}
+    </script>
+</section>
