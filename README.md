@@ -16,7 +16,7 @@
 3. 加入发表评论、读书笔记到豆瓣的功能 
 
 ###开发技术###
-采用Jingle UI 和 phonegap开发，目前在我测试过的android手机上还都算流畅。支持android2.3.6+,建议android4+
+采用Jingle UI 和 phonegap开发，目前在我测试过的android手机上还都算流畅。支持android2.3+,建议android4+
 
 ###下载地址###
 	
